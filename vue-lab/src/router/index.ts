@@ -1,7 +1,9 @@
+import { Form } from 'element-ui'
 import Vue from 'vue'
 import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import Table from '../views/Table.vue'
+import Forms from '../views/Forms.vue'
 
 Vue.use(VueRouter)
 
@@ -23,6 +25,11 @@ const routes: Array<RouteConfig> = [
     path: '/table',
     name: 'Table',
     component: Table
+  },
+  {
+    path: '/forms',
+    name: 'Forms',
+    component: Forms
   }
 ]
 
