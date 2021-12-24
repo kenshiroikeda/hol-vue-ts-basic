@@ -4,6 +4,7 @@ import VueRouter, { RouteConfig } from 'vue-router'
 import Home from '../views/Home.vue'
 import Table from '../views/Table.vue'
 import Forms from '../views/Forms.vue'
+import Translator from '../views/Translator.vue'
 
 Vue.use(VueRouter)
 
@@ -30,6 +31,11 @@ const routes: Array<RouteConfig> = [
     path: '/forms',
     name: 'Forms',
     component: Forms
+  },
+  {
+    path: '/translator',
+    name: 'Translator',
+    component: Translator
   }
 ]
 
