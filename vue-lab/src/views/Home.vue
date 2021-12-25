@@ -10,6 +10,11 @@
     </ul>
     <h3>イベントハンドリング</h3>
     <button v-on:click="onClick">実行</button>
+    <h3>条件付きハンドリング</h3>
+    <button v-on:click="showDetail">表示</button>
+    <div v-if="detail">
+      詳細が表示されました。
+    </div>
   </div>
 </template>
 
@@ -25,6 +30,7 @@ export default Vue.extend({
   data() {
     return {
       msg: "Hello Vue.js!",
+      detail: false,
       items: [
         {
           id: 1,
@@ -45,6 +51,9 @@ export default Vue.extend({
   methods: {
     onClick(): void{
       alert(this.msg);
+    },
+    showDetail():void{
+      this.detail = true;
     }
   }
 });
