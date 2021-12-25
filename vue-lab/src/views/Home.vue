@@ -15,6 +15,11 @@
     <div v-if="detail">
       詳細が表示されました。
     </div>
+    <div v-bind:class="{ 'text-danger': hasError }">
+      システムからのメッセージ
+    </div>
+    <button v-on:click="raiseError">エラー</button>
+
   </div>
 </template>
 
@@ -31,6 +36,7 @@ export default Vue.extend({
     return {
       msg: "Hello Vue.js!",
       detail: false,
+      hasError: false,
       items: [
         {
           id: 1,
@@ -54,6 +60,9 @@ export default Vue.extend({
     },
     showDetail():void{
       this.detail = true;
+    },
+    raiseError():void{
+      this.hasError = true;
     }
   }
 });
@@ -62,5 +71,8 @@ export default Vue.extend({
 <style scoped>
 .home {
   text-align: left;
+}
+.text-danger {
+  color: yellowgreen;
 }
 </style>
