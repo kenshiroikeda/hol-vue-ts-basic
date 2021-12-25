@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <h3>テキストバインディング</h3>
-    <span>{{ msg }}</span>
+    <span>{{ computedMsg }}</span>
     <h3>リストレンダリング</h3>    
     <ul id="item-list">
       <li v-for="item in items" :key="item.id">
@@ -35,6 +35,11 @@ export default Vue.extend({
           name: "mouse"
         }
       ] as Item[]
+    }
+  },
+  computed: {
+    computedMsg():String {
+      return this.msg.replace(/!/g, "") + " + TypeScript!";
     }
   },
   methods: {
